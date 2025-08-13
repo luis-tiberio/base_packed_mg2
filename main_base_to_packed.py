@@ -151,7 +151,7 @@ async def main():
             await page.wait_for_timeout(8000)
             await page.locator('xpath=/html[1]/body[1]/span[4]/div[1]/div[1]/div[1]').click()
             await page.wait_for_timeout(8000)
-            await page.locator('xpath=/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/label[1]/span[1]/input[1]').click()
+            await page.locator('xpath=/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]').click()
             await page.wait_for_timeout(8000)
             await page.locator('xpath=/html/body/div[3]/div[2]/div/div[3]/span/button[2]').click()
             await page.wait_for_timeout(90000)
