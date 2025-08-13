@@ -1,0 +1,11 @@
+asyncio
+playwright.async_api 
+time
+datetime
+os
+shutil
+pandas
+gspread
+oauth2client.service_account
+zipfile
+gspread_dataframe 
