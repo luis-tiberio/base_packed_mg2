@@ -65,7 +65,7 @@ def unzip_and_process_data(zip_path, extract_to_dir):
         df_selecionado = df_final.iloc[:, colunas_desejadas].copy()
         
         # 2. Renomear colunas
-        df_selecionado.columns = ['Chave', 'Coluna9', 'Coluna15', 'Coluna17', 'Coluna2']
+        df_selecionado.columns = ['Chave', 'Coluna9', 'Coluna15', 'Coluna17', 'Coluna2', 'Coluna23']
 
         # 3. Contar ocorrências da 'Chave'
         contagem = df_selecionado['Chave'].value_counts().reset_index()
