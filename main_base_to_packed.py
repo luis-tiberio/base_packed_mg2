@@ -147,9 +147,11 @@ async def main():
               # NAVEGAÇÃO E DOWNLOAD
             await page.goto("https://spx.shopee.com.br/#/general-to-management")
             await page.wait_for_timeout(8000)
-            await page.locator('xpath=/html/body/div[1]/div/div[2]/div[2]/div/div/div/div[1]/div[1]/div[8]/div/span/span/span/span/button').click()
+            #await page.locator('xpath=/html/body/div[1]/div/div[x2]/div[2]/div/div/div/div[1]/div[1]/div[8]/div/span/span/span/span/button').click()
+            await page.get_by_role("button", name="Exportar").click()
             await page.wait_for_timeout(8000)
-            await page.locator('xpath=/html[1]/body[1]/span[4]/div[1]/div[1]/div[1]').click()
+            #await page.locator('xpath=/html[1]/body[1]/span[4]/div[1]/div[1]/div[1]').click()
+            await page.get_by_role("button", name="Exportar").nth(1).click()
             await page.wait_for_timeout(8000)
             #await page.locator('xpath=/html[1]/body[1]/div[3]/div[2]/div[1]/div[2]/form[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/label[1]/span[1]/input[1]').click()
             await page.get_by_role("treeitem", name="Packed", exact=True).click()
