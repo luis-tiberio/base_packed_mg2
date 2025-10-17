@@ -148,7 +148,7 @@ async def main():
             
               # NAVEGAÇÃO E DOWNLOAD
             await page.goto("https://spx.shopee.com.br/#/general-to-management")
-            await page.wait_for_timeout(8000)
+            await page.wait_for_timeout(15000)
             await page.get_by_role('button', name='Exportar').click()
             await page.wait_for_timeout(8000)
             await page.locator('xpath=/html[1]/body[1]/span[4]/div[1]/div[1]/div[1]').click()
@@ -156,7 +156,7 @@ async def main():
             await page.get_by_role("treeitem", name="Packed", exact=True).click()
             await page.wait_for_timeout(8000)
             await page.get_by_role("button", name="Confirmar").click()
-            await page.wait_for_timeout(120000)
+            await page.wait_for_timeout(150000)
             
             # DOWNLOAD
             async with page.expect_download() as download_info:
