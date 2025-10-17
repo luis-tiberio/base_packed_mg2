@@ -11,6 +11,8 @@ import zipfile
 from gspread_dataframe import set_with_dataframe # Import para upload de DataFrame
 
 DOWNLOAD_DIR = "/tmp/shopee_automation"
+ops_id = os.environ.get('OPS_ID')
+ops_senha = os.environ.get('OPS_SENHA')
 
 def rename_downloaded_file(download_dir, download_path):
     """Renames the downloaded file to include the current hour."""
@@ -112,7 +114,7 @@ def update_google_sheet_with_dataframe(df_to_upload):
         client = gspread.authorize(creds)
         
         # ATENÇÃO: Use o nome correto da sua planilha e da aba
-        planilha = client.open("Stage Out Management - SP5 - SPX")
+        planilha = client.open("Stage Out Management - MG2 - SPX")
         aba = planilha.worksheet("Packed")
         
         aba.clear() # Limpa a aba antes de inserir novos dados
@@ -134,8 +136,8 @@ async def main():
             # LOGIN
             await page.goto("https://spx.shopee.com.br/")
             await page.wait_for_selector('xpath=//*[@placeholder="Ops ID"]', timeout=15000)
-            await page.locator('xpath=//*[@placeholder="Ops ID"]').fill('Ops71223')
-            await page.locator('xpath=//*[@placeholder="Senha"]').fill('@Shopee123')
+            await page.locator('xpath=//*[@placeholder="Ops ID"]').fill(ops_id)
+            await page.locator('xpath=//*[@placeholder="Senha"]').fill(ops_senha)
             await page.locator('xpath=/html/body/div[1]/div/div[2]/div/div/div[1]/div[3]/form/div/div/button').click()
             await page.wait_for_timeout(15000)
             try:
