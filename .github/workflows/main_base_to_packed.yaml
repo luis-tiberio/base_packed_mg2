@@ -32,3 +32,6 @@ jobs:
 
       - name: Executar o script
         run: xvfb-run python main_base_to_packed.py
+        env: # <--- ALTERAÇÃO ADICIONADA AQUI
+          OPS_ID: ${{ secrets.OPS_ID }}
+          OPS_SENHA: ${{ secrets.OPS_SENHA }}      
